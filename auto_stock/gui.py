@@ -23,7 +23,7 @@ class App:
         #创建两个button，并作为frame的一部分  
         self.urlpLabel= Label(frame,text=u"服务器地址：127.0.0.0:8889")
         self.urlpLabel.grid(row=1,column=0)  
-        #sf_text = StringVar()  
+        #sf_text = StringVar()
         self.button = Button(frame, text=u"启动", fg="red", command=self.start)  
         #此处side为LEFT表示将其放置 到frame剩余空间的最左方 
         self.button.grid(row=1,column=2) 

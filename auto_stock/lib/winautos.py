@@ -27,10 +27,11 @@ class Winauto(object):
     判定窗口是否激活
     '''    
     def IsWindow(self):
+        print self.para_hld
         if self.para_hld>0:
-           return 1;
+           return True;
         else:
-           return 0;
+           return False;
            
     '''
     窗口置顶
@@ -105,8 +106,14 @@ class Winauto(object):
         if buy_price!='0':        
             self.k.type_string(buy_nun) 
         self.Key_event(VK_CODE['tab'])
-        self.k.type_string(buy_nun)              
+        self.k.type_string(buy_nun)
+        time.sleep(1)              
         self.Key_event(VK_CODE['enter'])
+        time.sleep(1)
+        self.Key_event(VK_CODE['enter'])
+        time.sleep(1)
+        self.Key_event(VK_CODE['enter'])
+        time.sleep(1)
         self.Key_event(VK_CODE['enter'])
         
 	
@@ -229,25 +236,28 @@ class Winauto(object):
 def main_buy(stock,price,nun):
 
 	kk = Winauto()
-	AssetList=kk.getAllAsset()
-	value = AssetList['othe_balance']  #balance
-	price = price                         
-	nun = int(value/(price*100))*100      #can buy stock nun
-	kk.BuyS(stock,price,nun)
-	time.sleep(60)
-	kk.closApp()                      #close app
+	#AssetList=kk.getAllAsset()
+    #print AssetList
+	#value = AssetList['othe_balance']  #balance
+	#price = price                         
+	#nun = int(value/(price*100))*100      #can buy stock nun
+	kk.Buy('002486', '100', '100')
+	# time.sleep(60)
+	# kk.closApp()                      #close app
 	
+main_buy('002486', 100, 100)
+
 def main_SellS(stock,price,nun):
 
-	 kk = Winauto() ;time.sleep(2)
-	#AssetList=kk.getAllAsset()
+	kk = Winauto() ;time.sleep(2)
+	AssetList=kk.getAllAsset()
 	#value = AssetList['othe_balance']  #balance
 	#price = price                         
 	#nun = int(value/(price*100))*100      #can buy stock nun
    
-	 kk.SellS(stock,price,nun)
-	 time.sleep(10)
-	 kk.closApp()                      #close app
+	kk.SellS(stock,price,nun)
+	time.sleep(10)
+	kk.closApp()                      #close app
 	
 
 
