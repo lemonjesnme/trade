@@ -29,7 +29,7 @@ class Job(threading.Thread):
         while self.__running.isSet():
             self.__flag.wait()      
             # 为True时立即返回, 为False时阻塞直到内部的标识位为True后返回
-            print time.time()
+            print(time.time())
             time.sleep(1)
 
     def pause(self):

@@ -1,0 +1,14 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="auto_stock.lib.pykeyboard.winautos.win32api" />
+          <option value="auto_stock.lib.winautos.win32api" />
+          <option value="auto_stock.lib.winautos.win32gui" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
